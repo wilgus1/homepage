@@ -1,4 +1,4 @@
-console.log("Cześć.To będzie moja pierwsza profesjonalnie tworzona strona. Uwagi mile widziane");
+console.log("Cześć.To będzie moja pierwsza profesjonalnie tworzona strona. Taką mam nadzieję");
 
 let buttonDark = document.querySelector(".js-buttonDark");
 let body = document.querySelector(".body");
