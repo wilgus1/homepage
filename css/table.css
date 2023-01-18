@@ -1,0 +1,42 @@
+.table {
+    font-family: 'Crismon Text', sans-serif;
+    border-collapse: collapse;
+    max-width: 100%;
+}
+
+.table__cell {
+    border: 1px solid black;
+    padding: 15px;
+    text-align: center;
+}
+
+.table__caption {
+    caption-side: bottom;
+    text-align: left;
+    margin-top: 15px;
+    font-size: 12px;
+}
+
+.table__header {
+    background-color: rgb(223, 236, 231);
+    color: red;
+    font-weight: normal;
+}
+ 
+/* .table__header--row {
+    background-color: rgb(209, 219, 215);
+    color: red;
+    font-weight: normal;
+}  */
+
+.table__header--row {
+    border: 1px solid black;
+    background-color: rgb(241, 239, 239);
+    padding: 15px;
+    text-align: center;
+}
+
+.table__header--row:hover {
+    background: rgb(237, 211, 211);
+    color: rgb(81, 20, 20);
+}

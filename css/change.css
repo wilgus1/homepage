@@ -1,0 +1,11 @@
+.change {
+    text-align: center;
+}
+
+.change__img {
+    float: inline-end;
+    margin: 10px auto;
+    border-radius: 50%;
+    display: flex;
+    box-shadow: 15px 15px 30px 5px rgb(99, 139, 232);
+}

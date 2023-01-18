@@ -1,0 +1,23 @@
+.footer {
+    background-color: rgb(195, 188, 188);
+    text-align: center;
+    margin: auto;
+    width: 40%;
+
+}
+
+.footer__list {
+    display: inline-block;
+    list-style-type: none;
+}
+
+.footer__link {
+    color: rgb(60, 25, 238);
+    text-decoration: none;
+}
+
+.footer__link:hover {
+    color: rgb(34, 9, 160);
+    border-bottom: 2px solid;
+    outline: none;
+}

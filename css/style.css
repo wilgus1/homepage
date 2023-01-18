@@ -1,0 +1,28 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+::after,
+::before {
+    box-sizing: inherit;
+}
+
+.body {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px 20px 20px 20px;
+    line-height: 1.5;
+    color: #333;
+    background-color: rgb(253, 253, 253);
+}
+
+.body--Dark {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px 20px 20px 20px;
+    box-sizing: border-box;
+    line-height: 1.5;
+    color: #eee;
+    background-color: #222;
+}

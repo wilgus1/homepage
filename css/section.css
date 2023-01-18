@@ -1,0 +1,29 @@
+.section {
+    max-width: 95%;
+    margin: auto;
+}
+
+.section__header {
+    color: #b43409;
+    background-color: #ddf4ee;
+    border-radius: 20px;
+    padding-left: 15px;
+
+}
+
+.section__box {
+    font-family: 'Crismon Text', sans-serif;
+    text-align: justify;
+
+}
+
+.section__link {
+    color: crimson;
+    text-decoration: none;
+}
+
+.section__link:hover {
+    color: red;
+    border-bottom: 2px solid;
+    outline: none;
+}

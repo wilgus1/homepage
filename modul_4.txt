@@ -1,0 +1,235 @@
+
+V. formularze
+
+atrybuty formularza:
+name - nazwa
+readonly - pole tylko do odczytu, bez możliwości modyfikacji ale wysyła się
+disabled - pole wyłączone ale się nie wysyła
+placeholder - tekst w przypadku pusetj wartości
+autofocus - automatyczne przejście do pola po załadowaniu strony
+
+znacznik LABEL i atrybuty
+ label - opisuje pole info dla użytkownika
+kliknięcie w label jest równoznaczne w kliknięcie w pole
+
+przycik:
+1. button
+2. <input type="submit" value="Wyślij"> //wyślij
+przycisk moze mieć równe funckje w zależności od atrybuty <type>
+jeżeli <button> jest w środku <form> wówczas wyśle formularz z automatu. jak nie to dupa
+3. reset - czyści formularz
+w button możemy wstawić prócz tesktu nawet obrazek jako przycik
+
+TEXTAREA - można dodać wiele tesktu jednak, zwykły niesformtowany, domyślnie wewnątrz znacznika. białe znaki mają znaczenie
+atrybut <cols> - szerokość w kolumnach
+atrybut <rows> - liczba wierszy
+
+<fieldset> i <legend>
+Tworzenie grup pól - jeżeli pola dotyczą tego samego. 
+
+<input type="checkbox"> - pole wyboru
+<input radio=>
+<select> - wybór z listy
+<input type="file" name="xx"> - załączamy plik. z atrybutem MULTIPLE - kilka plików
+<input type="email" name="email"> wysyla adres e-mail i sprawdza podstawową skłądnie czy jest @
+<input type="password" name="pasword"> ukrywa wpisywane znaki - przeglądarka widzi hasło. 
+<input type="number" name="height"> liczby w formularzu atrybut stetp="" - podajemy wartość np. 5 wówczas wielokrotnosc "any" każda wartość
+max i min - określamy wartość max i minimalną
+<input type="range"> SUWAK 
+<input type="tel"> - nr tel. bez walidacji (własna atrybut patron)
+<input type="url">
+
+AUTOCOMPLETE BOX - sugerowane wartości
+<label>
+xxxxxxxxxxx:
+<input name="coś o XXX" list="xxxx's">
+<datalist id="xxxx's">
+<option>1</opiotn>
+<option>2</opiotn>
+<option>3</opiotn>
+<option>4</opiotn>
+</datalist>
+</label>
+
+<input type="hiden" name="secret-token" value="$#@@1234"> - ukryte pole nieedytowalne ale wysyłane
+<input type="color"  name="color" value="#cccccc"> - dodaje kolor do pola wartośc "value 6 cyfrowy hexa"
+
+DATOWE - słąbo wspierano nie ma pewności że napewno zadziałą. lepiej zewnętrzne biblioteki
+<input name="date" type="date"> - data
+<input name="dateAndTime" type="datetime-locla"> - data i czas bez strefy czasowej
+<input name="time" type="time"> - godzina
+<input name="week" type="week"> - tydzien
+<input name="month" type="month"> - miesiac
+
+WALIDACJA Formularza i wysyłka:
+
+required - pole nie może być puste - ale spacja pójdzie, wtedy
+minlenght i maxlenght - maxymalna i minmalna liczba znakó dla pola tekstwoego ale znowu same spacje polecą
+min i max - minimalna i maksymalna wartośc dla pól liczbowych i dat i czasu
+no i 
+PATTERN - wyrażenie regularne - potężne narzedzie ale nie zastępuje required
+przykłąd wyrażeń regularnych
+- https? - znak zapytania "?" po literce "s" pozwala na t ze pości z "S" lub bez "s" gdyż "?" jest po "s"
+- kod pocztowy [0-9]{2}-[0-9]{3} - czyli kod pocztowy 2 cyfry + "-" i 3 cyfry
+- (?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8} - co najmniej 8 znaków, przynajmniej jedna mała i jedna wielka litera i jedna cyfra
+
+Test wyrażeń regularnych
+https://regexr.com/
+
+WYSYŁANIE FORMULARZA - jak nie damy action idzie na adres strony
+metoda domyślna GET- prośba o zwrot zasobu, dopisane do adresu URL po "?"
+(strona na wysyłke testowo https://postman-echo.com/get
+np. https://google.com/search
+input z name="q" - google działą tak ze z parametrem q wpiszemy tekst wtedy wyszuka
+
+metoda POST: dane wysyłane w ciele <body> zapisuej na serwerze
+https://postman-echo.com/post
+
+Wysyłąnie plików (danych binarnych)
+- enctype="multipart/form-data" - dane będą szły w częściach osobna czesc na dane w ciele osoba na plik
+- method="post" - nie może być w get
+
+
+JS - Liczby
+typeof - sprawca zmienną przedtawiajac ciag znakó np. 5 - zwraca "number", tekst - zwraca "string"
+LICZBY ZMIENNO PRZECINKOWE !!!!jest myk
+infinity lub -ininity dzieląc liczbę przez 0 - wychodzi nieskończoność
+częśćiej NaN Not A Number - liczb aktóra nie jest liczbą
+czyli ciąg znakó np. tekst podzielony przez liczbę = NaN
+
+Zaokrąglanie liczb - do najbliższej całkowitej: Math.round(liczba)
+w górę: Math.ceil(liczba)
+w dół: Math.floor(liczba)
+
+Miejsca po przecinku, konkretna liczba
+5.123456 .toFixed(2) //5.12 - zwraca łańcuch znaków - nie lczbę
+
+Pierwiastek kwadratowy: Math.sqrt(16) //4
+
+Math.min(45, 25, 12, 50,) - zwraca najmniejsza liczbe czyli 12
+Math.max j.w.
+
+Losowa liczba - Math.random() pseudo-losowa liczba od zero do prawei 1
+Jak całkowita Maht.flor(Math.random)
+
+Konwertowanie na liczbę - ciąg znaków na liczbę
+UWAGA - przy łącuchu znaków łączy znaki nawet jak jedno jest liczbą np. "10" + "10" = 1010; "10" + 1 = 101
+konwersja Number("5") //5
++"5" //5
+
+persInt - zwraca liczby całkowite
+parseInt("5") //5
+parseInt("5 6") //5
+parseInt("5 jabłków") //5
+parseInt("jabłka") //NaN
+parseInt("jabłka 3") //NaN
+parseFloat j.w. - zwraca liczby zmienno przecinowe
+
+Operatory arytmetyczne:
++-*/
+% reszta z dzielena (modulo)
+** potęgowanie (niegada w IE)
+
+Kolejność operatorów jest ściśle zdefiniowana
+inkrementacja i dekremtanacja (odjąć jeden lub dodać jedne)
+++ --
+operator przypisania = przypisue wartośc do zmiennej 
+
+operator porównania:
+==== :identyczne wartości i typ
+!== :nie identyczne
+< , > :mniejsze lub większe
+<= , => : mniejszę bądź rowne, większe bądź równe
+==,!= :ta sama wartość typ bez znaczenia
+ 
+łańcuch znaków/text - STRING manipulowanie tesktem
+stosujemy albo  "" albo '' rekomendowane "" 
+jeżli potrzebujemy w tekście apostrof' np. that's  my boy to 'That\'s my boy'
+nowa linia lub tabulatro do ciągu znaków to \n lub \t
+załamanie lini w samym kdzie wówczas po tekście \ lub w nowej lini połącznie stronga +
+zwrci w jednej lini
+łączenie łąńcuchów znakó poprzez + "Dzień" + "dobry!"; // "Dzień dobry!"
+
+len name = "Piotr"; 
+let messege = "Cześć, " + name + "!"; //zwróci "Cześć, Krzysiek!"
+
+konwertowanie na tekst:
+ 
+let myNumber = 5;
+
+myNumber.toString(); // "5"
+myNumber + ""; //"5"
+
+TEMPLATE  LITERALS / TEMPALTE STRONGS
+conslole.log(`Mam na imię ${name}. Mam ${age} lta.`);
+` backstige
+`Nie ma problemu z 
+nową linią.`
+
+Dłuhość łacucha znaków
+let name = "Piotr";
+name.length; // "5"
+"cokolwiek".length // 9
+
+Metody obiektu STRING
+1. Pojedynczy znak z łańcucha znaków - let string = "Łańcuch";  Ł a ń c u c h
+string.charAt(2);// 3 znak "ń"; W PROGRAMOWANIU LICZYMY OD "0"  0 1 2 3 4 5 6
+string.charAt(string.length -1); // ostatni znak "h";
+string[2]; // 3 znak "ń";
+
+
+Czy łańcuch znaków zawiera jakiś fragment:
+"rach ciach ciach".includes("ach"); // true 
+"rach ciach ciach".startsWitch("rach"); // true
+"rach ciach ciach".endsWitch("ciach"); // true
+
+sprawdza na której pozycji jako index
+"rach ciach ciach".indexOf("rach"); // 0
+"rach ciach ciach".indexOf("ciach"); // 5
+"rach ciach ciach".indexOf("lalala"); // -1
+"rach ciach ciach".lastindexOf("ciach"); // 11
+
+Wyciąganie fagmentu tekstu 
+"ene due rabe".slice(2, 5) //"e, d"; od znaku 3 do 6 
+"ene due rabe".slice(8) //"rabe";
+"ene due rabe".slice(8, -2) //"ra"
+
+czyszczenie białych znakó po lewo i po prawo: .trim
+" sialala \
+".trim(); //"sialala"
+
+zmiana wielkości liter: .toLowerCase(); //małe
+.toUpperCae(); //duże
+
+zmian fragmentu tekstu na inny: .replaceAll()
+"www".replaceAll("w", "a") // "aaa" - wszytskie wystąpienia zrwaca uwagę na wielkość liter
+"www".replace("w", "a") // "aww" - pierwsze wystąpienia nie zwaraca uwagi na wilekość liter
+
+wyrażenie regularne
+"YouCode YouCode".replace("you/i", "I") // ICode YouCode - nie ważna wielkość
+"YouCode YouCode".replace("/you/gi", "I") // ICode Icode - wszytskei wystąpienia
+
+porónywanie znaków > < nie gada
+metoda .localCompare
+"dupa".localCopmater"DwieDupy" //1	zwraca 1; -1; 0
+
+zwilokrotnienie ciagu znkaów
+.repeat()
+"W".repeat(3); //"WWW"   
+
+*******FORMULARZ W JS************
+Przydatne wartości value, checked dla radio i checkbox
+sprawdza wartośc w wlemencie INPUT heightElement.value
+
+przydatne metody pól: click ()symulacja kliknięcia; focus()-ustawia focus
+
+ZDARZENIE INPUT - odpala się wkiedy użytkowniak zmienia jakąś wartość
+submit()
+reste()
+
+
+
+
+
+
+
