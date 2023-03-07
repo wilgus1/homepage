@@ -1,4 +1,7 @@
-# Strona Piotr Wilgowicz
-![Piotr](https://github.com/wilgus1/homepage/blob/main/images/ja2.jpg)
+# Homepage
+Hi, I'm Peter. I'm learning to program. On my first page, briefly about me.
+Not knowing English is a big obstacle.
+
+![Piotr](https://github.com/wilgus1/homepage/blob/Piotr-Wilgowicz/images/ja2.jpg)
 ## Demo
-*adres strony* (https://wilgus1.github.io/homepage/)
+*homepage* (https://wilgus1.github.io/homepage/)
